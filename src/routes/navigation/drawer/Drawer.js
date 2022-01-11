@@ -14,6 +14,7 @@ import Kontakt from '../../../scenes/kontakt/Kontakt'
 import Searcher from '../../../scenes/searcher/Searcher'
 import Tasks from '../../../scenes/tasks/Tasks'
 import Profile from '../../../scenes/profile/Profile'
+import Settings from '../../../scenes/settings/Settings'
 
 
 
@@ -41,7 +42,8 @@ const DrawerNavigator = () => (
     <Drawer.Screen name="Kontakt" component={Kontakt} />
     <Drawer.Screen name="Wyszukaj" component={Searcher} />
     <Drawer.Screen name="ToDo List" component={Tasks} />
-    <Drawer.Screen name="Prifile" component={Profile} />
+    <Drawer.Screen name="Profile" component={Profile} />
+    <Drawer.Screen name="Settings" component={Settings} />
 
 
 
