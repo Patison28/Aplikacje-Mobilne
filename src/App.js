@@ -4,10 +4,12 @@ import { Provider } from 'react-redux'
 import store from 'utils/store'
 import 'utils/ignore'
 
+
 // assets
 import { imageAssets } from 'theme/images'
 import { fontAssets } from 'theme/fonts'
 import Router from './routes'
+import { NativeBaseProvider } from 'native-base'
 
 const App = () => {
   // state
@@ -28,9 +30,11 @@ const App = () => {
   // rendering
   if (!didLoad) return <View />
   return (
-    <Provider store={store}>
-      <Router />
-    </Provider>
+    <NativeBaseProvider>
+      <Provider store={store}>
+        <Router />
+      </Provider>
+    </NativeBaseProvider>
   )
 }
 
