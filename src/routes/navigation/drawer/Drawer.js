@@ -6,8 +6,7 @@ import {
 } from '@react-navigation/drawer'
 import DrawerMenu from './DrawerMenu'
 import TabNavigator from '../tabs'
-import { SearcherNavigator, TasksNavigator, KontaktNavigator, SettingsNavigator, ScannerQRNavigator} from "../stacks";
-
+import { SearcherNavigator, TasksNavigator, KontaktNavigator, SettingsNavigator, ScannerQRNavigator, CalendarNavigator,NewsNavigator} from "../stacks";
 
 const Drawer = createDrawerNavigator()
 
@@ -26,6 +25,8 @@ const DrawerMenuContainer = (props) => {
 const DrawerNavigator = () => (
   <Drawer.Navigator initialRouteName="Home" drawerContent={DrawerMenuContainer}>
     <Drawer.Screen name="Home" component={TabNavigator} />
+    <Drawer.Screen name="Aktualnosci" component={NewsNavigator}/>
+    <Drawer.Screen name="Kalendarz" component={CalendarNavigator} />
     <Drawer.Screen name="QR" component={ScannerQRNavigator} />
     <Drawer.Screen name="Kontakt" component={KontaktNavigator} />
     <Drawer.Screen name="Wyszukaj" component={SearcherNavigator} />
