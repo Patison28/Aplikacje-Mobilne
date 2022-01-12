@@ -10,7 +10,7 @@ const styles = {
   },
   text: {
     textAlign: 'center',
-    fontSize: 16,
+    fontSize: 25,
   },
 }
 
