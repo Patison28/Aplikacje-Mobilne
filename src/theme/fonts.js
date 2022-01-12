@@ -9,10 +9,22 @@ export const fonts = {
     bold: 'openSans_bold',
     boldItalic: 'openSans_bold_italic',
   },
+  anton: {
+    regular: 'anton_regular',
+  },
+  moLah : {
+    regular: 'mooLah'
+  }
 }
 
 // fonts preloading
 export const fontsAll = [
+  {
+    mooLah: require('../../assets/fonts/MooLahLah-Regular.ttf'),
+  },
+  {
+    anton_regular: require('../../assets/fonts/Anton-Regular.ttf'),
+  },
   {
     openSans_regular: require('../../assets/fonts/OpenSans-Regular.ttf'),
   },

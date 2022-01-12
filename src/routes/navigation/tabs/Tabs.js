@@ -3,10 +3,9 @@ import { View } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import FontIcon from 'react-native-vector-icons/FontAwesome5'
 import { colors } from 'theme'
-import Tasks from '../../../scenes/tasks/Tasks'
 
 // stack navigators
-import { HomeNavigator, ProfileNavigator } from '../stacks'
+import {HomeNavigator, TasksNavigator} from '../stacks'
 
 const Tab = createBottomTabNavigator()
 
@@ -20,16 +19,7 @@ const TabNavigator = () => (
             return (
               <FontIcon
                 name="home"
-                color={focused ? colors.lightPurple : colors.gray}
-                size={20}
-                solid
-              />
-            )
-          case 'Profile':
-            return (
-              <FontIcon
-                name="user"
-                color={focused ? colors.lightPurple : colors.gray}
+                color={focused ? colors.lightYellow : colors.lightPurple}
                 size={20}
                 solid
               />
@@ -38,7 +28,7 @@ const TabNavigator = () => (
               return (
                 <FontIcon
                   name="tasks"
-                  color={focused ? colors.lightPurple : colors.gray}
+                  color={focused ? colors.lightYellow : colors.lightPurple}
                   size={20}
                   solid
                 />
@@ -59,12 +49,10 @@ const TabNavigator = () => (
         // paddingTop: 5,
       },
     }}
-    initialRouteName="Home"
-    swipeEnabled={false}
   >
     <Tab.Screen name="Home" component={HomeNavigator} />
- 
-    <Tab.Screen name="Tasks" component={Tasks} />
+
+    <Tab.Screen name="Tasks" component={TasksNavigator} />
   </Tab.Navigator>
 )
 

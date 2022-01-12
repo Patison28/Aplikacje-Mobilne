@@ -1,10 +1,10 @@
 const colors = {
-  darkPurple: '#231d54',
+  darkPurple: '#f8c544',
   purple: '#8100ff',
-  lightPurple: '#9388db',
+  lightPurple: '#a5a39e',
   lightGrayPurple: '#f7f7fb',
   pink: '#ff3d69',
-  gray: '#797777',
+  lightYellow: '#f9d67d',
 }
 
 export default colors
