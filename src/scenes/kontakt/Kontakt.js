@@ -10,7 +10,13 @@ import {
   Spacer,
   Center,
   NativeBaseProvider,
+  Input,
+  Icon,
 } from "native-base"
+
+import { Ionicons, MaterialIcons } from '@expo/vector-icons';
+
+
 export const Example = () => {
   const data = [
     {
@@ -53,15 +59,49 @@ export const Example = () => {
     },
   ]
   return (
+
+
     <Box
       w={{
         base: "100%",
         md: "25%",
+
       }}
     >
-      <Heading fontSize="xl" p="4" pb="3">
-        Wykładowcy
-      </Heading>
+      <VStack><Heading fontSize="50" width="100%" p="5px"
+        color="#f9d67d">
+        WYKŁADOWCY
+      </Heading></VStack>
+
+
+      <VStack width="100%" space="15" alignItems="center"  >
+
+        <Input
+
+          placeholder="Search"
+          variant="filled"
+          width="100%"
+          bg="gray.100"
+          borderRadius="10"
+          py="1"
+          px="2"
+          placeholderTextColor="gray.500"
+          _hover={{ bg: 'gray.200', borderWidth: 0 }}
+          borderWidth="0"
+          _web={{
+            _focus: { style: { boxShadow: 'none' } },
+          }}
+          InputLeftElement={
+            <Icon
+              ml="2"
+              size="5"
+              color="gray.500"
+              as={<Ionicons name="ios-search" />}
+            />
+          }
+        />
+      </VStack>
+
       <FlatList
         data={data}
         renderItem={({ item }) => (
@@ -75,15 +115,16 @@ export const Example = () => {
             pr="5"
             py="2"
           >
-            <HStack space={3} justifyContent="space-between">
+            <HStack bg="#FDF5DE" space={3} justifyContent="space-between">
               <Avatar
                 size="48px"
                 source={{
                   uri: item.avatarUrl,
                 }}
               />
-              <VStack>
+              <VStack color="#FFF7DC" >
                 <Text
+
                   _dark={{
                     color: "warmGray.50",
                   }}
@@ -117,6 +158,12 @@ export const Example = () => {
         )}
         keyExtractor={(item) => item.id}
       />
+
+
+
+
+
+
     </Box>
   )
 }

@@ -11,6 +11,7 @@ import {
   Icon,
   Center,
   NativeBaseProvider,
+  ScrollView
 } from "native-base"
 import { Feather, Entypo } from "@expo/vector-icons"
 export const Example = () => {
@@ -57,9 +58,11 @@ export const Example = () => {
     setList(temp)
   }
 
+
+
   return (
     <Box>
-      <Heading mb="5">To Do List</Heading>
+      <Heading mb="30">To Do List</Heading>
       <VStack space={4}>
         <HStack space={2}>
           <Input
@@ -67,8 +70,10 @@ export const Example = () => {
             onChangeText={(v) => setInputValue(v)}
             value={inputValue}
             placeholder="Add Task"
+            border-style="rgb(249.0, 214.0, 124.0)"
           />
           <IconButton
+            backgroundColor="#f9d67d"
             borderRadius="sm"
             variant="solid"
             icon={
@@ -83,17 +88,23 @@ export const Example = () => {
         <VStack space={2}>
           {list.map((item, itemI) => (
             <HStack
-              w="50%"
+              w="60%"
+              padding="5%"
               justifyContent="space-between"
               alignItems="center"
               key={item.title + itemI.toString()}
             >
+
               <Checkbox
+                colorScheme="rgba(249.0, 214.0, 124.0, 1.0)" defaultIsChecked
+
+
                 isChecked={item.isCompleted}
                 onChange={() => handleStatusChange(itemI)}
                 value={item.title}
               >
                 <Text
+                  fontWeight="400"
                   mx="2"
                   strikeThrough={item.isCompleted}
                   _light={{
@@ -119,6 +130,8 @@ export const Example = () => {
                 }
                 onPress={() => handleDelete(itemI)}
               />
+
+
             </HStack>
           ))}
         </VStack>
@@ -126,6 +139,20 @@ export const Example = () => {
     </Box>
   )
 }
+
+// const styles = StyleSheet.create({
+//   checkboxStyle: {
+//     display: "flex",
+//     alignItems: "center",
+//     justifyContent: "center",
+//     borderWidth: 2,
+//     borderRadius: 4,
+//     borderColor: "#089f9d67d1b2",
+//     backgroundColor: "#f9d67d",
+//     color: true
+//   }
+// });
+
 
 export default () => {
   return (
