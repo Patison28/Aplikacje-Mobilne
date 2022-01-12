@@ -9,6 +9,8 @@ import Kontakt from 'scenes/kontakt'
 import Settings from 'scenes/settings/Settings'
 import ScannerQR from 'scenes/scannerQR'
 import Form from 'scenes/form/Form'
+import Calendar from 'scenes/calendar/Calendar'
+import News from 'scenes/news/News'
 import HeaderLeft from './HeaderLeft'
 import HeaderTitle from './HeaderTitle'
 
@@ -58,7 +60,7 @@ export const TasksNavigator = () => (
     headerMode="screen"
     screenOptions={navigationProps}>
     <Stack.Screen name="Tasks"
-                  component={Searcher}
+                  component={Tasks}
                   options={({ navigation }) => ({
                     title: 'Tasks',
                     headerLeft: () => <HeaderLeft navigation={navigation} />,
@@ -121,6 +123,38 @@ export const ScannerQRNavigator = () => (
                   component={ScannerQR}
                   options={({ navigation }) => ({
                     title: 'ScannerQR',
+                    headerLeft: () => <HeaderLeft navigation={navigation} />,
+                    headerTitle: () => <HeaderTitle />,
+                  })}
+    />
+  </Stack.Navigator>
+)
+
+export const CalendarNavigator = () => (
+  <Stack.Navigator
+    initialRouteName="Calendar"
+    headerMode="screen"
+    screenOptions={Calendar}>
+    <Stack.Screen name="Calendar"
+                  component={Calendar}
+                  options={({ navigation }) => ({
+                    title: 'Calendar',
+                    headerLeft: () => <HeaderLeft navigation={navigation} />,
+                    headerTitle: () => <HeaderTitle />,
+                  })}
+    />
+  </Stack.Navigator>
+)
+
+export const NewsNavigator = () => (
+  <Stack.Navigator
+    initialRouteName="News"
+    headerMode="screen"
+    screenOptions={News}>
+    <Stack.Screen name="News"
+                  component={News}
+                  options={({ navigation }) => ({
+                    title: 'News',
                     headerLeft: () => <HeaderLeft navigation={navigation} />,
                     headerTitle: () => <HeaderTitle />,
                   })}
