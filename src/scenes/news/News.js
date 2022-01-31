@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 import {
   Box,
   Heading,
@@ -10,19 +10,21 @@ import {
   Stack,
   NativeBaseProvider,
   ScrollView,
-} from "native-base"
+} from 'native-base'
 
-
-export const Example = () => {
+export const News = () => {
   return (
     <ScrollView
       _contentContainerStyle={{
-        px: "20px",
-        mb: "4",
-        minW: "72"
+        px: '20px',
+        mb: '4',
+        minW: '72',
       }}
     >
-      <Heading size="md" ml="-1" p="10%"
+      <Heading
+        size="md"
+        ml="-1"
+        p="10%"
         fontWeight="bold"
         fontSize="30"
         color="#f9d67f"
@@ -36,7 +38,7 @@ export const Example = () => {
         borderColor="coolGray.200"
         borderWidth="1"
         _dark={{
-          borderColor: "coolGray.600",
+          borderColor: 'coolGray.600',
 
         }}
         _web={{
@@ -44,14 +46,14 @@ export const Example = () => {
           borderWidth: 0,
         }}
         _light={{
-          backgroundColor: "gray.50",
+          backgroundColor: 'gray.50',
         }}
       >
         <Box>
           <AspectRatio w="100%" ratio={16 / 9}>
             <Image
               source={{
-                uri: "https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/p843x403/271740165_2976671165976679_1489336747155317970_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=730e14&_nc_ohc=rAlJ-vwuMAYAX-jHvsk&_nc_ht=scontent-waw1-1.xx&oh=00_AT-ZFptFz_8tTd4Qhv7tcmsE-dMEvFDFHhUbBDF794poGw&oe=61E389DD",
+                uri: 'https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/p843x403/271740165_2976671165976679_1489336747155317970_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=730e14&_nc_ohc=rAlJ-vwuMAYAX-jHvsk&_nc_ht=scontent-waw1-1.xx&oh=00_AT-ZFptFz_8tTd4Qhv7tcmsE-dMEvFDFHhUbBDF794poGw&oe=61E389DD',
               }}
               alt="image"
             />
@@ -59,12 +61,12 @@ export const Example = () => {
           <Center
             bg="#f9d67d"
             _dark={{
-              bg: "violet.400",
+              bg: 'violet.400',
             }}
             _text={{
-              color: "warmGray.50",
-              fontWeight: "700",
-              fontSize: "xs",
+              color: 'warmGray.50',
+              fontWeight: '700',
+              fontSize: 'xs',
             }}
             position="absolute"
             bottom="0"
@@ -83,10 +85,10 @@ export const Example = () => {
               fontWeight="bold"
               fontSize="16"
               _light={{
-                color: "#f9d67f",
+                color: '#f9d67f',
               }}
               _dark={{
-                color: "#f9d67d",
+                color: '#f9d67d',
               }}
               fontWeight="500"
               ml="-0.5"
@@ -103,7 +105,7 @@ export const Example = () => {
               <Text
                 color="coolGray.600"
                 _dark={{
-                  color: "warmGray.200",
+                  color: 'warmGray.200',
                 }}
                 fontWeight="400"
               >
@@ -120,7 +122,7 @@ export const Example = () => {
         borderColor="coolGray.200"
         borderWidth="1"
         _dark={{
-          borderColor: "coolGray.600",
+          borderColor: 'coolGray.600',
 
         }}
         _web={{
@@ -128,14 +130,14 @@ export const Example = () => {
           borderWidth: 0,
         }}
         _light={{
-          backgroundColor: "gray.50",
+          backgroundColor: 'gray.50',
         }}
       >
         <Box>
           <AspectRatio w="100%" ratio={16 / 9}>
             <Image
               source={{
-                uri: "https://www.holidify.com/images/cmsuploads/compressed/Bangalore_citycover_20190613234056.jpg",
+                uri: 'https://www.holidify.com/images/cmsuploads/compressed/Bangalore_citycover_20190613234056.jpg',
               }}
               alt="image"
             />
@@ -143,12 +145,12 @@ export const Example = () => {
           <Center
             bg="#f9d67d"
             _dark={{
-              bg: "violet.400",
+              bg: 'violet.400',
             }}
             _text={{
-              color: "warmGray.50",
-              fontWeight: "700",
-              fontSize: "xs",
+              color: 'warmGray.50',
+              fontWeight: '700',
+              fontSize: 'xs',
             }}
             position="absolute"
             bottom="0"
@@ -166,10 +168,10 @@ export const Example = () => {
             <Text
               fontSize="xs"
               _light={{
-                color: "#f9d67f",
+                color: '#f9d67f',
               }}
               _dark={{
-                color: "#f9d67d",
+                color: '#f9d67d',
               }}
               fontWeight="500"
               ml="-0.5"
@@ -187,7 +189,7 @@ export const Example = () => {
               <Text
                 color="coolGray.600"
                 _dark={{
-                  color: "warmGray.200",
+                  color: 'warmGray.200',
                 }}
                 fontWeight="400"
               >
@@ -204,7 +206,7 @@ export const Example = () => {
         borderColor="coolGray.200"
         borderWidth="1"
         _dark={{
-          borderColor: "coolGray.600",
+          borderColor: 'coolGray.600',
 
         }}
         _web={{
@@ -212,14 +214,14 @@ export const Example = () => {
           borderWidth: 0,
         }}
         _light={{
-          backgroundColor: "gray.50",
+          backgroundColor: 'gray.50',
         }}
       >
         <Box>
           <AspectRatio w="100%" ratio={16 / 9}>
             <Image
               source={{
-                uri: "https://www.holidify.com/images/cmsuploads/compressed/Bangalore_citycover_20190613234056.jpg",
+                uri: 'https://www.holidify.com/images/cmsuploads/compressed/Bangalore_citycover_20190613234056.jpg',
               }}
               alt="image"
             />
@@ -227,12 +229,12 @@ export const Example = () => {
           <Center
             bg="#f9d67d"
             _dark={{
-              bg: "violet.400",
+              bg: 'violet.400',
             }}
             _text={{
-              color: "warmGray.50",
-              fontWeight: "700",
-              fontSize: "xs",
+              color: 'warmGray.50',
+              fontWeight: '700',
+              fontSize: 'xs',
             }}
             position="absolute"
             bottom="0"
@@ -250,10 +252,10 @@ export const Example = () => {
             <Text
               fontSize="xs"
               _light={{
-                color: "#f9d67f",
+                color: '#f9d67f',
               }}
               _dark={{
-                color: "#f9d67d",
+                color: '#f9d67d',
               }}
               fontWeight="500"
               ml="-0.5"
@@ -271,7 +273,7 @@ export const Example = () => {
               <Text
                 color="coolGray.600"
                 _dark={{
-                  color: "warmGray.200",
+                  color: 'warmGray.200',
                 }}
                 fontWeight="400"
               >
@@ -288,7 +290,7 @@ export const Example = () => {
         borderColor="coolGray.200"
         borderWidth="1"
         _dark={{
-          borderColor: "coolGray.600",
+          borderColor: 'coolGray.600',
 
         }}
         _web={{
@@ -296,14 +298,14 @@ export const Example = () => {
           borderWidth: 0,
         }}
         _light={{
-          backgroundColor: "gray.50",
+          backgroundColor: 'gray.50',
         }}
       >
         <Box>
           <AspectRatio w="100%" ratio={16 / 9}>
             <Image
               source={{
-                uri: "https://www.holidify.com/images/cmsuploads/compressed/Bangalore_citycover_20190613234056.jpg",
+                uri: 'https://www.holidify.com/images/cmsuploads/compressed/Bangalore_citycover_20190613234056.jpg',
               }}
               alt="image"
             />
@@ -311,12 +313,12 @@ export const Example = () => {
           <Center
             bg="#f9d67d"
             _dark={{
-              bg: "violet.400",
+              bg: 'violet.400',
             }}
             _text={{
-              color: "warmGray.50",
-              fontWeight: "700",
-              fontSize: "xs",
+              color: 'warmGray.50',
+              fontWeight: '700',
+              fontSize: 'xs',
             }}
             position="absolute"
             bottom="0"
@@ -334,10 +336,10 @@ export const Example = () => {
             <Text
               fontSize="xs"
               _light={{
-                color: "#f9d67f",
+                color: '#f9d67f',
               }}
               _dark={{
-                color: "#f9d67d",
+                color: '#f9d67d',
               }}
               fontWeight="500"
               ml="-0.5"
@@ -355,7 +357,7 @@ export const Example = () => {
               <Text
                 color="coolGray.600"
                 _dark={{
-                  color: "warmGray.200",
+                  color: 'warmGray.200',
                 }}
                 fontWeight="400"
               >
@@ -372,7 +374,7 @@ export const Example = () => {
         borderColor="coolGray.200"
         borderWidth="1"
         _dark={{
-          borderColor: "coolGray.600",
+          borderColor: 'coolGray.600',
 
         }}
         _web={{
@@ -380,14 +382,14 @@ export const Example = () => {
           borderWidth: 0,
         }}
         _light={{
-          backgroundColor: "gray.50",
+          backgroundColor: 'gray.50',
         }}
       >
         <Box>
           <AspectRatio w="100%" ratio={16 / 9}>
             <Image
               source={{
-                uri: "https://www.holidify.com/images/cmsuploads/compressed/Bangalore_citycover_20190613234056.jpg",
+                uri: 'https://www.holidify.com/images/cmsuploads/compressed/Bangalore_citycover_20190613234056.jpg',
               }}
               alt="image"
             />
@@ -395,12 +397,12 @@ export const Example = () => {
           <Center
             bg="#f9d67d"
             _dark={{
-              bg: "violet.400",
+              bg: 'violet.400',
             }}
             _text={{
-              color: "warmGray.50",
-              fontWeight: "700",
-              fontSize: "xs",
+              color: 'warmGray.50',
+              fontWeight: '700',
+              fontSize: 'xs',
             }}
             position="absolute"
             bottom="0"
@@ -418,10 +420,10 @@ export const Example = () => {
             <Text
               fontSize="xs"
               _light={{
-                color: "#f9d67f",
+                color: '#f9d67f',
               }}
               _dark={{
-                color: "#f9d67d",
+                color: '#f9d67d',
               }}
               fontWeight="500"
               ml="-0.5"
@@ -439,7 +441,7 @@ export const Example = () => {
               <Text
                 color="coolGray.600"
                 _dark={{
-                  color: "warmGray.200",
+                  color: 'warmGray.200',
                 }}
                 fontWeight="400"
               >
@@ -449,19 +451,15 @@ export const Example = () => {
           </HStack>
         </Stack>
       </Box>
-
-
 
     </ScrollView>
   )
 }
 
-export default () => {
-  return (
-    <NativeBaseProvider>
-      <Center flex={1} px="3">
-        <Example />
-      </Center>
-    </NativeBaseProvider>
-  )
-}
+export default () => (
+  <NativeBaseProvider>
+    <Center flex={1} px="3">
+      <News />
+    </Center>
+  </NativeBaseProvider>
+)

@@ -1,4 +1,4 @@
-import * as React from "react"
+import * as React from 'react'
 import {
   Box,
   Text,
@@ -11,16 +11,24 @@ import {
   HStack,
   Center,
   NativeBaseProvider,
-} from "native-base"
-export const Example = () => {
+} from 'native-base'
+import {useState} from "react";
+import ClientRequest from '../../routes/ExternalCalls/ClientRequest'
+import PropTypes from "prop-types";
+
+export const Login = ({navigation}) => {
+  const [email, setEmail] = useState(undefined);
+  const [password, setPassword] = useState(undefined);
   return (
+    <NativeBaseProvider>
+      <Center flex={1} px="3">
     <Box safeArea p="2" py="8" w="90%" maxW="290">
       <Heading
         size="lg"
         fontWeight="600"
         color="coolGray.800"
         _dark={{
-          color: "warmGray.50",
+          color: 'warmGray.50',
         }}
       >
         Welcome
@@ -28,7 +36,7 @@ export const Example = () => {
       <Heading
         mt="1"
         _dark={{
-          color: "warmGray.200",
+          color: 'warmGray.200',
         }}
         color="coolGray.600"
         fontWeight="medium"
@@ -40,16 +48,20 @@ export const Example = () => {
       <VStack space={3} mt="5">
         <FormControl>
           <FormControl.Label>Email </FormControl.Label>
-          <Input />
+          <Input onChange = {(event) => {
+            setEmail(event.target.value);
+          }}/>
         </FormControl>
         <FormControl>
           <FormControl.Label>Password</FormControl.Label>
-          <Input type="password" />
+          <Input onChange = {(event) => {
+            setPassword(event.target.value);
+          }}/>
           <Link
             _text={{
-              fontSize: "xs",
-              fontWeight: "500",
-              color: "indigo.500",
+              fontSize: 'xs',
+              fontWeight: '500',
+              color: 'indigo.500',
             }}
             alignSelf="flex-end"
             mt="1"
@@ -57,7 +69,12 @@ export const Example = () => {
             Forget Password?
           </Link>
         </FormControl>
-        <Button mt="2" colorScheme="indigo">
+        <Button mt="2" colorScheme="indigo" onPress={async () => {
+          const result = await ClientRequest.clientLogin(email, password)
+          console.log(result)
+          navigation.navigate('News', { from: 'Login' });
+
+        }}>
           Sign in
         </Button>
         <HStack mt="6" justifyContent="center">
@@ -65,16 +82,16 @@ export const Example = () => {
             fontSize="sm"
             color="coolGray.600"
             _dark={{
-              color: "warmGray.200",
+              color: 'warmGray.200',
             }}
           >
-            I'm a new user.{" "}
+            I'm a new user.{' '}
           </Text>
           <Link
             _text={{
-              color: "indigo.500",
-              fontWeight: "medium",
-              fontSize: "sm",
+              color: 'indigo.500',
+              fontWeight: 'medium',
+              fontSize: 'sm',
             }}
             href="#"
           >
@@ -83,15 +100,16 @@ export const Example = () => {
         </HStack>
       </VStack>
     </Box>
-  )
-}
-
-export default () => {
-  return (
-    <NativeBaseProvider>
-      <Center flex={1} px="3">
-        <Example />
-      </Center>
+        </Center>
     </NativeBaseProvider>
   )
 }
+Login.propTypes = {
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func,
+  }),
+}
+Login.defaultProps = {
+  navigation: { navigate: () => null },
+}
+export default Login;

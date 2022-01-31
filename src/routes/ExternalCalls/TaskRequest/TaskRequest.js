@@ -5,7 +5,7 @@ const getClientTasksEndpoint = 'http://localhost:8090/getClientTasks/'
 const updateTaskEndpoint = 'http://localhost:8090/updateTask'
 
 const getClientTasks = async (id) => {
-  let result;
+  let result
   await axios.get(getClientTasksEndpoint + id)
     .then((response) => {
       result = response.data
@@ -24,7 +24,7 @@ const getClientTasks = async (id) => {
 //   Priority: 'testAxios'
 // }
 const createTask = async (newTas) => {
-  let result;
+  let result
   await axios
     .put(createTaskEndpoint, newTas)
     .then((response) => {
@@ -59,5 +59,5 @@ const updateTask = async (task) => {
 }
 
 export {
-  getClientTasks, createTask, updateTask
+  getClientTasks, createTask, updateTask,
 }
