@@ -1,0 +1,160 @@
+[{
+"Name": "Podstawy grafiki komputerowej",
+"Typ": "Laboratorium",
+"Day": "Poniedziałek",
+"StartHours": "08:00",
+"EndHours": "10:00",
+"ParityStatus": "tydzień",
+"Class": "3.26D",
+"LecturerList": "Pięta Paweł mgr inż."
+},
+{
+"Name": "Metody obliczeniowe",
+"Typ": "Laboratorium",
+"Day": "Poniedziałek",
+"StartHours": "10:00",
+"EndHours": "12:00",
+"ParityStatus": "tydzień",
+"Class": "tydzień",
+"LecturerList": "KUŁAKOWSKI Andrzej dr inż"
+},
+{
+"Name": "Grafika komputerowa",
+"Typ": "Laboratorium",
+"Day":"Poniedziałek",
+"StartHours":"12:00",
+"EndHours":"14:00 ",
+"ParityStatus": "tydzień",
+"Class": "3.19D",
+"LecturerList": "Kaczmarski Daniel mgr inż.#"
+},
+{
+"Name": "Projektowanie aplikacji internetowych 1",
+"Typ": "Laboratorium",
+"Day":"Poniedziałek",
+"StartHours":"14:00",
+"EndHours":"16:00 ",
+"ParityStatus": "nieparzyste",
+"Class": "4.11D",
+"LecturerList": "WIKAREK Jarosław  dr inż.#"
+},
+{
+"Name": "Aplikacje mobilne",
+"Typ": "projekt",
+"Day":"Poniedziałek",
+"StartHours":"16:00",
+"EndHours":"18:00 ",
+"ParityStatus": "parzyste",
+"Class": "3.18D', 'Pawełkiewicz Mateusz mgr inż."
+},
+  {
+"Name": "Wychowanie fizyczne",
+"Typ": "Ćwiczenia",
+"Day":"Wtorek",
+"StartHours":"10:00",
+"EndHours":"12:00 ",
+"ParityStatus": "tydzień",
+"Class": "Hala WF",
+"LecturerList": ""
+},
+{
+"Name": "Język obcy 3",
+"Typ": "Ćwiczenia",
+"Day":"Wtorek",
+"StartHours":"12:00",
+"EndHours":"14:00 ",
+"ParityStatus": "tydzień",
+"Class": "1.20D",
+"LecturerList": "Janowska Agnieszka mgr#"
+},
+{
+"Name": "Programowanie współbieżne",
+"Typ": "Laboratorium",
+"Day":"Wtorek",
+"StartHours":"18:00",
+"EndHours":"20:00 ",
+"ParityStatus": "tydzień",
+"Class": "3.12D",
+"LecturerList": "Ciopiński Leszek mgr inż.#PADUCH Paweł dr inż.#"
+},
+{
+"Name": "Podstawy inżynierii programowania",
+"Typ": "projekt",
+"Day":"Środa",
+"StartHours":"08:00",
+"EndHours":"10:00 ",
+"ParityStatus": "nieparzyste",
+"Class": "3.26D",
+"LecturerList": "BEDLA Mariusz dr inż.#"
+},
+{
+"Name": "Programowanie współbieżne",
+"Typ": "Laboratorium",
+"Day":"Środa",
+"StartHours":"10:00",
+"EndHours":"12:00 ",
+"ParityStatus": "tydzień",
+"Class": "3.10D",
+"LecturerList": "Ciopiński Leszek mgr inż.#PADUCH Paweł dr inż.#"
+},
+{
+"Name": "Projektowanie aplikacji internetowych 1",
+"Type": "Wykład",
+"Day":"Środa",
+"StartHours":"14:00",
+"EndHours":"16:00 ",
+"ParityStatus": "tydzień",
+"Class": "Aula Gł 3",
+"LecturerList": "WIKAREK Jarosław  dr inż.#"
+},
+{
+"Name": "Grafika komputerowa",
+"Typ": "Laboratorium",
+"Day":"Środa",
+"StartHours":"16:00",
+"EndHours":"18:00 ",
+"ParityStatus": "tydzień",
+"Class": "3.19D",
+"LecturerList": "Kaczmarski Daniel mgr inż.#"
+},
+{
+"Name": "Technika świetlna",
+"Typ": "projekt",
+"Day":"Czwartek",
+"StartHours":"10:00",
+"EndHours":"12:00 ",
+"ParityStatus": "nieparzyste",
+"Class": "5.29D",
+"LecturerList": "DELĄG Mariusz mgr inż.#"
+},
+{
+"Name": "Sterowniki przemysłowe w ukł. napędowych",
+"Type": "Wykład",
+"Day":"Czwartek",
+"StartHours":"12:00",
+"EndHours":"14:00 ",
+"ParityStatus": "tydzień",
+"Class": "2.27DH",
+"LecturerList": "KARYŚ Sławomir dr hab inż.prof. PŚK#"
+},
+{
+"Name": "Komputerowe systemy sterowania",
+"Type": "Wykład",
+"Day":"Czwartek",
+"StartHours":"14:00",
+"EndHours":"16:00 ",
+"ParityStatus": "tydzień",
+"Class": "1.10D",
+"LecturerList": "KAZAŁA Robert dr inż.#"
+},
+{
+"Name": "Systemy inteligentne 2",
+"Typ": "projekt",
+"Day":"Piątek",
+"StartHours":"12:00",
+"EndHours":"16:00 ",
+"ParityStatus": "parzyste",
+"Class": "1.15DH",
+"LecturerList": "RUDZIŃSKI Filip dr hab. inż. prof. PŚK#"
+}
+]
