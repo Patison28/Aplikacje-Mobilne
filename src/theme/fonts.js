@@ -12,9 +12,9 @@ export const fonts = {
   anton: {
     regular: 'anton_regular',
   },
-  moLah : {
-    regular: 'mooLah'
-  }
+  moLah: {
+    regular: 'mooLah',
+  },
 }
 
 // fonts preloading

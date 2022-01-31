@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 import {
   Box,
   FlatList,
@@ -12,72 +12,74 @@ import {
   NativeBaseProvider,
   Input,
   Icon,
-} from "native-base"
+} from 'native-base'
 
-import { Ionicons, MaterialIcons } from '@expo/vector-icons';
-
+import { Ionicons } from '@expo/vector-icons'
 
 export const Example = () => {
   const data = [
     {
 
-      fullName: "dr hab. inż. Stanisław Deniziak",
-      recentText: " deniziak@eden.tu.kielce.pl ",
-      subtitle: " Sala 1.05, budynek D ",
+      fullName: 'dr hab. inż. Stanisław Deniziak',
+      recentText: ' deniziak@eden.tu.kielce.pl ',
+      subtitle: ' Sala 1.05, budynek D ',
       avatarUrl:
-        "https://achilles.tu.kielce.pl/portal/pliki/avatars/sdeniziak.jpg/@@images/9796bac7-4f23-4747-9af8-931b543ca14f.jpeg",
+        'https://achilles.tu.kielce.pl/portal/pliki/avatars/sdeniziak.jpg/@@images/9796bac7-4f23-4747-9af8-931b543ca14f.jpeg',
     },
     {
 
-      fullName: " dr inż. Barbara Łukawska",
-      recentText: "b.lukawska@tu.kielce.pl ",
-      subtitle: " Sala 2.05, budynek D ",
+      fullName: ' dr inż. Barbara Łukawska',
+      recentText: 'b.lukawska@tu.kielce.pl ',
+      subtitle: ' Sala 2.05, budynek D ',
       avatarUrl:
-        "https://achilles.tu.kielce.pl/portal/pliki/avatars/blukawska.jpg/@@images/d383fb8c-7da6-4767-b2da-cd25dcc0eb7f.jpeg",
+        'https://achilles.tu.kielce.pl/portal/pliki/avatars/blukawska.jpg/@@images/d383fb8c-7da6-4767-b2da-cd25dcc0eb7f.jpeg',
     },
     {
 
-      fullName: "dr inż. Grzegorz Łukawski",
-      recentText: "g.lukawski@tu.kielce.pl ",
-      subtitle: " Sala 4.05, budynek D ",
-      avatarUrl: "https://achilles.tu.kielce.pl/portal/pliki/avatars/glukawski.jpg/@@images/84e9b5c1-4366-49cf-b4c1-6dc66c2504cc.jpeg",
+      fullName: 'dr inż. Grzegorz Łukawski',
+      recentText: 'g.lukawski@tu.kielce.pl ',
+      subtitle: ' Sala 4.05, budynek D ',
+      avatarUrl: 'https://achilles.tu.kielce.pl/portal/pliki/avatars/glukawski.jpg/@@images/84e9b5c1-4366-49cf-b4c1-6dc66c2504cc.jpeg',
     },
     {
 
-      fullName: "dr inż. Adam Krechowicz",
-      recentText: "a.krechowicz@tu.kielce.pl ",
-      subtitle: " Sala .05, budynek D ",
+      fullName: 'dr inż. Adam Krechowicz',
+      recentText: 'a.krechowicz@tu.kielce.pl ',
+      subtitle: ' Sala .05, budynek D ',
       avatarUrl:
-        "https://achilles.tu.kielce.pl/portal/pliki/avatars/akrechowicz.jpg/@@images/c879a3d2-f56f-4470-a5ab-03ed661cd014.jpeg",
+        'https://achilles.tu.kielce.pl/portal/pliki/avatars/akrechowicz.jpg/@@images/c879a3d2-f56f-4470-a5ab-03ed661cd014.jpeg',
     },
     {
-      fullName: "mgr inż. Mateusz Pawełkiewicz",
-      recentText: "m.pawelkiewicz@tu.kielce.pl",
-      subtitle: " Sala 3.05, budynek D ",
+      fullName: 'mgr inż. Mateusz Pawełkiewicz',
+      recentText: 'm.pawelkiewicz@tu.kielce.pl',
+      subtitle: ' Sala 3.05, budynek D ',
       avatarUrl:
-        "https://achilles.tu.kielce.pl/portal/pliki/avatars/mpawelkiewicz.png/@@images/00601b0a-7807-4313-a811-01843ecadb32.png",
+        'https://achilles.tu.kielce.pl/portal/pliki/avatars/mpawelkiewicz.png/@@images/00601b0a-7807-4313-a811-01843ecadb32.png',
     },
   ]
   return (
 
-
     <Box
       w={{
-        base: "100%",
-        md: "25%",
+        base: '100%',
+        md: '25%',
 
       }}
     >
-      <VStack><Heading fontSize="50" width="100%" p="5px"
-        color="#f9d67d">
-        WYKŁADOWCY
-      </Heading></VStack>
+      <VStack>
+        <Heading
+          fontSize="50"
+          width="100%"
+          p="5px"
+          color="#f9d67d"
+        >
+          WYKŁADOWCY
+        </Heading>
+      </VStack>
 
-
-      <VStack width="100%" space="15" alignItems="center"  >
+      <VStack width="100%" space="15" alignItems="center">
 
         <Input
-
           placeholder="Search"
           variant="filled"
           width="100%"
@@ -91,14 +93,14 @@ export const Example = () => {
           _web={{
             _focus: { style: { boxShadow: 'none' } },
           }}
-          InputLeftElement={
+          InputLeftElement={(
             <Icon
               ml="2"
               size="5"
               color="gray.500"
               as={<Ionicons name="ios-search" />}
             />
-          }
+          )}
         />
       </VStack>
 
@@ -108,7 +110,7 @@ export const Example = () => {
           <Box
             borderBottomWidth="1"
             _dark={{
-              borderColor: "gray.600",
+              borderColor: 'gray.600',
             }}
             borderColor="coolGray.200"
             pl="4"
@@ -122,11 +124,10 @@ export const Example = () => {
                   uri: item.avatarUrl,
                 }}
               />
-              <VStack color="#FFF7DC" >
+              <VStack color="#FFF7DC">
                 <Text
-
                   _dark={{
-                    color: "warmGray.50",
+                    color: 'warmGray.50',
                   }}
                   color="coolGray.800"
                   bold
@@ -136,7 +137,7 @@ export const Example = () => {
                 <Text
                   color="coolGray.600"
                   _dark={{
-                    color: "warmGray.200",
+                    color: 'warmGray.200',
                   }}
                 >
                   {item.recentText}
@@ -145,7 +146,7 @@ export const Example = () => {
                 <Text
                   color="coolGray.600"
                   _dark={{
-                    color: "warmGray.200",
+                    color: 'warmGray.200',
                   }}
                 >
                   {item.subtitle}
@@ -159,21 +160,14 @@ export const Example = () => {
         keyExtractor={(item) => item.id}
       />
 
-
-
-
-
-
     </Box>
   )
 }
 
-export default () => {
-  return (
-    <NativeBaseProvider>
-      <Center flex={1} px="3">
-        <Example />
-      </Center>
-    </NativeBaseProvider>
-  )
-}
+export default () => (
+  <NativeBaseProvider>
+    <Center flex={1} px="3">
+      <Example />
+    </Center>
+  </NativeBaseProvider>
+)

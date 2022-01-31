@@ -5,7 +5,7 @@ import FontIcon from 'react-native-vector-icons/FontAwesome5'
 import { colors } from 'theme'
 
 // stack navigators
-import {HomeNavigator, TasksNavigator} from '../stacks'
+import { NewsNavigator, TasksNavigator} from '../stacks'
 
 const Tab = createBottomTabNavigator()
 
@@ -15,7 +15,7 @@ const TabNavigator = () => (
       // eslint-disable-next-line react/prop-types
       tabBarIcon: ({ focused }) => {
         switch (route.name) {
-          case 'Home':
+          case 'News':
             return (
               <FontIcon
                 name="home"
@@ -50,8 +50,7 @@ const TabNavigator = () => (
       },
     }}
   >
-    <Tab.Screen name="Home" component={HomeNavigator} />
-
+    <Tab.Screen name="News" component={NewsNavigator} />
     <Tab.Screen name="Tasks" component={TasksNavigator} />
   </Tab.Navigator>
 )

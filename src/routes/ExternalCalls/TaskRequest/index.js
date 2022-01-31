@@ -1,11 +1,11 @@
 import {
   getClientTasks,
   createTask,
-  updateTask
+  updateTask,
 } from './TaskRequest'
 
 export default {
   getClientTasks,
   createTask,
-  updateTask
+  updateTask,
 }

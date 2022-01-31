@@ -2,12 +2,12 @@ import {
   clientLogin,
   getClientById,
   registerClient,
-  updateClientData
+  updateClientData,
 } from './ClientRequest'
 
 export default {
   clientLogin,
   getClientById,
   registerClient,
-  updateClientData
+  updateClientData,
 }

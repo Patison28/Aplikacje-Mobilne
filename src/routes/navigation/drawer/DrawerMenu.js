@@ -1,10 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { View, SafeAreaView, Text } from 'react-native'
+import {View, SafeAreaView, Image} from 'react-native'
 
 import { DrawerActions } from '@react-navigation/native'
 import FontIcon from 'react-native-vector-icons/FontAwesome5'
 import { colors } from 'theme'
+import {images} from "../../../theme";
 
 const styles = {
   root: {
@@ -22,6 +23,10 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
   },
+  logo: {
+    width: 100,
+    height: 100,
+  },
 }
 
 const DrawerMenu = (props) => (
@@ -38,7 +43,7 @@ const DrawerMenu = (props) => (
       />
     </View>
     <View style={styles.main}>
-      <Text>Drawer Menu</Text>
+      <Image source={images.logo_sm} style={styles.logo} />
     </View>
   </SafeAreaView>
 )

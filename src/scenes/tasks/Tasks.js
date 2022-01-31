@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 import {
   Input,
   IconButton,
@@ -11,36 +11,36 @@ import {
   Icon,
   Center,
   NativeBaseProvider,
-  ScrollView
-} from "native-base"
-import { Feather, Entypo } from "@expo/vector-icons"
+} from 'native-base'
+import { Feather, Entypo } from '@expo/vector-icons'
+
 export const Example = () => {
   const instState = [
     {
-      title: "Code",
+      title: 'Code',
       isCompleted: true,
     },
     {
-      title: "Meeting with team at 9",
+      title: 'Meeting with team at 9',
       isCompleted: false,
     },
     {
-      title: "Check Emails",
+      title: 'Check Emails',
       isCompleted: false,
     },
     {
-      title: "Write an article",
+      title: 'Write an article',
       isCompleted: false,
     },
   ]
   const [list, setList] = React.useState(instState)
-  const [inputValue, setInputValue] = React.useState("")
+  const [inputValue, setInputValue] = React.useState('')
 
   const addItem = (title: string) => {
     setList([
       ...list,
       {
-        title: title,
+        title,
         isCompleted: false,
       },
     ])
@@ -52,13 +52,9 @@ export const Example = () => {
   }
 
   const handleStatusChange = (index: number) => {
-    const temp = list.map((item, itemI) =>
-      itemI !== index ? item : { ...item, isCompleted: !item.isCompleted }
-    )
+    const temp = list.map((item, itemI) => (itemI !== index ? item : { ...item, isCompleted: !item.isCompleted }))
     setList(temp)
   }
-
-
 
   return (
     <Box>
@@ -81,7 +77,7 @@ export const Example = () => {
             }
             onPress={() => {
               addItem(inputValue)
-              setInputValue("")
+              setInputValue('')
             }}
           />
         </HStack>
@@ -96,9 +92,8 @@ export const Example = () => {
             >
 
               <Checkbox
-                colorScheme="rgba(249.0, 214.0, 124.0, 1.0)" defaultIsChecked
-
-
+                colorScheme="rgba(249.0, 214.0, 124.0, 1.0)"
+                defaultIsChecked
                 isChecked={item.isCompleted}
                 onChange={() => handleStatusChange(itemI)}
                 value={item.title}
@@ -108,10 +103,10 @@ export const Example = () => {
                   mx="2"
                   strikeThrough={item.isCompleted}
                   _light={{
-                    color: item.isCompleted ? "gray.400" : "coolGray.800",
+                    color: item.isCompleted ? 'gray.400' : 'coolGray.800',
                   }}
                   _dark={{
-                    color: item.isCompleted ? "gray.400" : "coolGray.50",
+                    color: item.isCompleted ? 'gray.400' : 'coolGray.50',
                   }}
                 >
                   {item.title}
@@ -120,17 +115,16 @@ export const Example = () => {
               <IconButton
                 size="sm"
                 colorScheme="trueGray"
-                icon={
+                icon={(
                   <Icon
                     as={Entypo}
                     name="minus"
                     size="xs"
                     color="trueGray.400"
                   />
-                }
+                )}
                 onPress={() => handleDelete(itemI)}
               />
-
 
             </HStack>
           ))}
@@ -153,13 +147,10 @@ export const Example = () => {
 //   }
 // });
 
-
-export default () => {
-  return (
-    <NativeBaseProvider>
-      <Center flex={1} px="3">
-        <Example />
-      </Center>
-    </NativeBaseProvider>
-  )
-}
+export default () => (
+  <NativeBaseProvider>
+    <Center flex={1} px="3">
+      <Example />
+    </Center>
+  </NativeBaseProvider>
+)

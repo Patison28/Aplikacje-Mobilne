@@ -1,3 +1,3 @@
-import { HomeNavigator, SearcherNavigator, TasksNavigator, KontaktNavigator, SettingsNavigator,ScannerQRNavigator,CalendarNavigator,NewsNavigator } from './Stacks'
+import { HomeNavigator, SearcherNavigator, TasksNavigator, KontaktNavigator, SettingsNavigator,ScannerQRNavigator,ScheduleNavigator,NewsNavigator, LoginNavigator } from './Stacks'
 
-export { HomeNavigator, SearcherNavigator, TasksNavigator, KontaktNavigator, SettingsNavigator, ScannerQRNavigator,CalendarNavigator,NewsNavigator }
+export { HomeNavigator, SearcherNavigator, TasksNavigator, KontaktNavigator, SettingsNavigator, ScannerQRNavigator,ScheduleNavigator,NewsNavigator, LoginNavigator }

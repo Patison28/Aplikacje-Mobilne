@@ -9,8 +9,8 @@ const clientLogin = async (email, password) => {
   const body = {
     email,
     password,
-  };
-  let result;
+  }
+  let result
   await axios.post(clientLoginEndpoint, body)
     .then((response) => {
       result = response.data
@@ -18,12 +18,12 @@ const clientLogin = async (email, password) => {
     .catch((errors) => {
       result = errors.message
     })
-  console.log(result)
+  // console.log(result)
   return result
 }
 
 const getClientById = async (id) => {
-  let result;
+  let result
   await axios.get(getClientByIdEndpoint + id)
     .then((response) => {
       result = response.data
@@ -43,7 +43,7 @@ const getClientById = async (id) => {
 //   Password: 'testAxios',
 // }
 const registerClient = async (newClient) => {
-  let result;
+  let result
   await axios
     .put(registerClientEndpoint, newClient)
     .then((response) => {

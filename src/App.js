@@ -7,8 +7,8 @@ import 'utils/ignore'
 // assets
 import { imageAssets } from 'theme/images'
 import { fontAssets } from 'theme/fonts'
-import Router from './routes'
 import { NativeBaseProvider } from 'native-base'
+import Router from './routes'
 // import ClientRequest from './routes/ExternalCalls/ClientRequest'
 // import TaskRequest from './routes/ExternalCalls/TaskRequest'
 

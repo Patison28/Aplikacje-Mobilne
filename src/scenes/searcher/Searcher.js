@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 import {
   Select,
   VStack,
@@ -8,14 +8,14 @@ import {
   NativeBaseProvider,
   Input,
   FormControl,
-  Divider, Flex, Text
-} from "native-base"
+  Divider, Flex, Text,
+} from 'native-base'
 
 export const Example = () => {
-  let [service, setService] = React.useState("")
+  const [service, setService] = React.useState('')
   return (
     <VStack alignItems="center" space={4}>
-      <Heading  fontWeight="bold" fontSize = "20" mb="30">Wyszukaj</Heading>
+      <Heading fontWeight="bold" fontSize="20" mb="30">Wyszukaj</Heading>
       <Flex bg="#f9d67d" direction="row" p="4">
         <Text fontWeight="bold">Grupa</Text>
         <Divider bg="black" thickness="2" mx="2" orientation="vertical" />
@@ -29,7 +29,7 @@ export const Example = () => {
         accessibilityLabel="Choose Service"
         placeholder="Choose Service"
         _selectedItem={{
-          bg: "teal.600",
+          bg: 'teal.600',
           endIcon: <CheckIcon size="5" />,
         }}
         mt={1}
@@ -52,17 +52,14 @@ export const Example = () => {
         <Input bg="#f9d67d" type="text" defaultValue="mgr. Jan Kowalski" placeholder="password" />
       </Flex>
 
-
     </VStack>
   )
 }
 
-export default () => {
-  return (
-    <NativeBaseProvider>
-      <Center flex={1} px="3">
-        <Example />
-      </Center>
-    </NativeBaseProvider>
-  )
-}
+export default () => (
+  <NativeBaseProvider>
+    <Center flex={1} px="3">
+      <Example />
+    </Center>
+  </NativeBaseProvider>
+)
