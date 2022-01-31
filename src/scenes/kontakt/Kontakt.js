@@ -1,4 +1,5 @@
-import React from 'react'
+import React, {useState, useEffect} from "react";
+import lecturers from "../../data/lectures.json"
 import {
   Box,
   FlatList,
@@ -12,73 +13,41 @@ import {
   NativeBaseProvider,
   Input,
   Icon,
-} from 'native-base'
+} from "native-base"
 
-import { Ionicons } from '@expo/vector-icons'
+import { Ionicons } from '@expo/vector-icons';
 
 export const Example = () => {
-  const data = [
-    {
+  const [list, setList] = useState([]);
+  const [filter, setFilter] = useState('');
 
-      fullName: 'dr hab. inż. Stanisław Deniziak',
-      recentText: ' deniziak@eden.tu.kielce.pl ',
-      subtitle: ' Sala 1.05, budynek D ',
-      avatarUrl:
-        'https://achilles.tu.kielce.pl/portal/pliki/avatars/sdeniziak.jpg/@@images/9796bac7-4f23-4747-9af8-931b543ca14f.jpeg',
-    },
-    {
+  useEffect(() => {
+    setList(lecturers.list);
+  }, [])
 
-      fullName: ' dr inż. Barbara Łukawska',
-      recentText: 'b.lukawska@tu.kielce.pl ',
-      subtitle: ' Sala 2.05, budynek D ',
-      avatarUrl:
-        'https://achilles.tu.kielce.pl/portal/pliki/avatars/blukawska.jpg/@@images/d383fb8c-7da6-4767-b2da-cd25dcc0eb7f.jpeg',
-    },
-    {
+  const clearString = (value) => {
+    return value.replace(/\s/g, '').toLowerCase();
+  }
 
-      fullName: 'dr inż. Grzegorz Łukawski',
-      recentText: 'g.lukawski@tu.kielce.pl ',
-      subtitle: ' Sala 4.05, budynek D ',
-      avatarUrl: 'https://achilles.tu.kielce.pl/portal/pliki/avatars/glukawski.jpg/@@images/84e9b5c1-4366-49cf-b4c1-6dc66c2504cc.jpeg',
-    },
-    {
+  const checkFullName = (value) => {
+    return clearString(value.fullName).indexOf(clearString(filter)) >= 0
+  }
 
-      fullName: 'dr inż. Adam Krechowicz',
-      recentText: 'a.krechowicz@tu.kielce.pl ',
-      subtitle: ' Sala .05, budynek D ',
-      avatarUrl:
-        'https://achilles.tu.kielce.pl/portal/pliki/avatars/akrechowicz.jpg/@@images/c879a3d2-f56f-4470-a5ab-03ed661cd014.jpeg',
-    },
-    {
-      fullName: 'mgr inż. Mateusz Pawełkiewicz',
-      recentText: 'm.pawelkiewicz@tu.kielce.pl',
-      subtitle: ' Sala 3.05, budynek D ',
-      avatarUrl:
-        'https://achilles.tu.kielce.pl/portal/pliki/avatars/mpawelkiewicz.png/@@images/00601b0a-7807-4313-a811-01843ecadb32.png',
-    },
-  ]
+  const filterlist = (value) => {
+    setFilter(value);
+  }
   return (
-
     <Box
       w={{
-        base: '100%',
-        md: '25%',
-
+        base: "100%",
+        md: "25%",
       }}
     >
-      <VStack>
-        <Heading
-          fontSize="50"
-          width="100%"
-          p="5px"
-          color="#f9d67d"
-        >
-          WYKŁADOWCY
-        </Heading>
-      </VStack>
-
-      <VStack width="100%" space="15" alignItems="center">
-
+      <VStack><Heading fontSize="50" width="100%" p="5px"
+                       color="#f9d67d">
+        WYKŁADOWCY
+      </Heading></VStack>
+      <VStack width="100%" space="15" alignItems="center"  >
         <Input
           placeholder="Search"
           variant="filled"
@@ -93,24 +62,25 @@ export const Example = () => {
           _web={{
             _focus: { style: { boxShadow: 'none' } },
           }}
-          InputLeftElement={(
+          InputLeftElement={
             <Icon
               ml="2"
               size="5"
               color="gray.500"
               as={<Ionicons name="ios-search" />}
             />
-          )}
+          }
+          onChangeText = {filterlist}
         />
       </VStack>
 
       <FlatList
-        data={data}
+        data={list.filter(checkFullName)}
         renderItem={({ item }) => (
           <Box
             borderBottomWidth="1"
             _dark={{
-              borderColor: 'gray.600',
+              borderColor: "gray.600",
             }}
             borderColor="coolGray.200"
             pl="4"
@@ -124,10 +94,11 @@ export const Example = () => {
                   uri: item.avatarUrl,
                 }}
               />
-              <VStack color="#FFF7DC">
+              <VStack color="#FFF7DC" >
                 <Text
+
                   _dark={{
-                    color: 'warmGray.50',
+                    color: "warmGray.50",
                   }}
                   color="coolGray.800"
                   bold
@@ -137,7 +108,7 @@ export const Example = () => {
                 <Text
                   color="coolGray.600"
                   _dark={{
-                    color: 'warmGray.200',
+                    color: "warmGray.200",
                   }}
                 >
                   {item.recentText}
@@ -146,10 +117,20 @@ export const Example = () => {
                 <Text
                   color="coolGray.600"
                   _dark={{
-                    color: 'warmGray.200',
+                    color: "warmGray.200",
                   }}
                 >
-                  {item.subtitle}
+                  {item.email}
+
+                </Text>
+
+                <Text
+                  color="coolGray.600"
+                  _dark={{
+                    color: "warmGray.200",
+                  }}
+                >
+                  {item.classroom}
 
                 </Text>
               </VStack>
@@ -159,15 +140,16 @@ export const Example = () => {
         )}
         keyExtractor={(item) => item.id}
       />
-
     </Box>
   )
 }
 
-export default () => (
-  <NativeBaseProvider>
-    <Center flex={1} px="3">
-      <Example />
-    </Center>
-  </NativeBaseProvider>
-)
+export default () => {
+  return (
+    <NativeBaseProvider>
+      <Center flex={1} px="3">
+        <Example />
+      </Center>
+    </NativeBaseProvider>
+  )
+}
