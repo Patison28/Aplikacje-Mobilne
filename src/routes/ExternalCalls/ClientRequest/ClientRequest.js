@@ -1,12 +1,12 @@
 import axios from 'axios'
 
-//Deklaracja endpoiontów
+
 const clientLoginEndpoint = 'http://localhost:8090/clientLogin'
 const getClientByIdEndpoint = 'http://localhost:8090/getClientById/'
 const registerClientEndpoint = 'http://localhost:8090/registerClient'
 const updateClientDataEndpoint = 'http://localhost:8090/updateClientData'
 
-//Logowanie clienta
+
 const clientLogin = async (email, password) => {
   const body = {
     email,
