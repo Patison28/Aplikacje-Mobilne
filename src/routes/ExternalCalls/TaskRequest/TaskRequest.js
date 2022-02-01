@@ -1,8 +1,11 @@
 import axios from 'axios'
-
+//Zadeklarowanie endpointów
 const createTaskEndpoint = 'http://localhost:8090/createTask'
 const getClientTasksEndpoint = 'http://localhost:8090/getClientTasks/'
 const updateTaskEndpoint = 'http://localhost:8090/updateTask'
+
+
+//Pobieranie danych o kliencie z id
 
 const getClientTasks = async (id) => {
   let result
