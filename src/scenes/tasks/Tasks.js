@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import {
   Input,
   IconButton,
@@ -13,47 +13,48 @@ import {
   NativeBaseProvider,
 } from 'native-base'
 import { Feather, Entypo } from '@expo/vector-icons'
+import TaskRequest from '../../routes/ExternalCalls/TaskRequest'
 
 export const Example = () => {
-  const instState = [
-    {
-      title: 'Code',
-      isCompleted: true,
-    },
-    {
-      title: 'Meeting with team at 9',
-      isCompleted: false,
-    },
-    {
-      title: 'Check Emails',
-      isCompleted: false,
-    },
-    {
-      title: 'Write an article',
-      isCompleted: false,
-    },
-  ]
-  const [list, setList] = React.useState(instState)
+  const [state, setState] = useState([]);
+  useEffect(()=>{
+    async function fetchData() {
+      const response = await TaskRequest.getClientTasks(1);
+      setState(response);
+    }
+    fetchData();
+  },[])
+  console.log('statestate')
+  console.log(state)
   const [inputValue, setInputValue] = React.useState('')
-
-  const addItem = (title: string) => {
-    setList([
-      ...list,
-      {
-        title,
-        isCompleted: false,
-      },
-    ])
+  const addItem = async (Name: string) => {
+    const newTask = {
+      Name: Name,
+      ClientId: 1,
+      Priority: 'testAxios'
+    }
+    await TaskRequest.createTask(newTask);
+    const response = await TaskRequest.getClientTasks(1);
+    setState(response);
   }
 
   const handleDelete = (index: number) => {
-    const temp = list.filter((_, itemI) => itemI !== index)
-    setList(temp)
+    const temp = state.filter((_, itemI) => itemI !== index)
+    setState(temp)
   }
 
-  const handleStatusChange = (index: number) => {
-    const temp = list.map((item, itemI) => (itemI !== index ? item : { ...item, isCompleted: !item.isCompleted }))
-    setList(temp)
+  const handleStatusChange = async (index: number) => {
+    const elementToUpdate = state[index];
+    await TaskRequest.updateTask({
+        Id: elementToUpdate.Id,
+        Name: elementToUpdate.Name,
+        Priority: elementToUpdate.Priority,
+        Done: !elementToUpdate.Done
+      }
+    );
+
+    // const temp = state.map((item, itemI) => (itemI == index ? item : { ...item, Done: !item.Done }))
+    setState(await TaskRequest.getClientTasks(1))
   }
 
   return (
@@ -82,34 +83,34 @@ export const Example = () => {
           />
         </HStack>
         <VStack space={2}>
-          {list.map((item, itemI) => (
+          {state.map((item, itemI) => (
             <HStack
               w="60%"
               padding="5%"
               justifyContent="space-between"
               alignItems="center"
-              key={item.title + itemI.toString()}
+              key={item.Name + itemI.toString()}
             >
 
               <Checkbox
                 colorScheme="rgba(249.0, 214.0, 124.0, 1.0)"
                 defaultIsChecked
-                isChecked={item.isCompleted}
+                isChecked={item.Done}
                 onChange={() => handleStatusChange(itemI)}
-                value={item.title}
+                value={item.Name}
               >
                 <Text
                   fontWeight="400"
                   mx="2"
-                  strikeThrough={item.isCompleted}
+                  strikeThrough={item.Done}
                   _light={{
-                    color: item.isCompleted ? 'gray.400' : 'coolGray.800',
+                    color: item.Done ? 'gray.400' : 'coolGray.800',
                   }}
                   _dark={{
-                    color: item.isCompleted ? 'gray.400' : 'coolGray.50',
+                    color: item.Done ? 'gray.400' : 'coolGray.50',
                   }}
                 >
-                  {item.title}
+                  {item.Name}
                 </Text>
               </Checkbox>
               <IconButton
@@ -150,7 +151,7 @@ export const Example = () => {
 export default () => (
   <NativeBaseProvider>
     <Center flex={1} px="3">
-      <Example />
+      <Example  />
     </Center>
   </NativeBaseProvider>
 )
