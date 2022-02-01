@@ -1,54 +1,47 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { Box, FlatList, Heading, Select, HStack, VStack, Text, Spacer, Center, NativeBaseProvider, CheckIcon } from "native-base";
+import initialValues from "../../data/dane.json"
 
 const Schedule = () => {
-  const data = [{
-    id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
-    fullName: "Aafreen Khan",
-    timeStamp: "12:47 PM",
-    recentText: "Good Day!"
-  }, {
-    id: "3ac68afc-c605-48d3-a4f8-fbd91aa97f63",
-    fullName: "Sujitha Mathur",
-    timeStamp: "11:11 PM",
-    recentText: "Cheer up, there!"
-  }, {
-    id: "58694a0f-3da1-471f-bd96-145571e29d72",
-    fullName: "Anci Barroco",
-    timeStamp: "6:22 PM",
-    recentText: "Good Day!"
-  }, {
-    id: "68694a0f-3da1-431f-bd56-142371e29d72",
-    fullName: "Aniket Kumar",
-    timeStamp: "8:56 PM",
-    recentText: "All the best"
-  }, {
-    id: "28694a0f-3da1-471f-bd96-142456e29d72",
-    fullName: "Kiara",
-    timeStamp: "12:47 PM",
-    recentText: "I will call today."
-  }];
+  const [data, setData] = useState([]);
   let [service, setService] = React.useState("");
+  const [filter, setFilter] = useState('');
+
+  useEffect(() => {
+    setData(initialValues);
+  }, [])
+
+  const clearString = (value) => {
+    return value.replace(/\s/g, '').toLowerCase();
+  }
+
+  const checkDay = (value) => {
+    return clearString(value.Day).indexOf(clearString(filter)) >= 0
+  }
+
+  const filterList = (value) => {
+    setFilter(value);
+  }
   return (
     <NativeBaseProvider>
       <Center flex={1} px="3">
       <Box>
-        <Heading fontSize="xl" p="4" pb="3">
+        <Heading fontSize="xl" p="4" pb="3" color="#f9d67d">
           Plan zajęć
         </Heading>
         <Box w="3/4" maxW="300">
           <Select selectedValue={service} minWidth="200" accessibilityLabel="Dzień tygodnia" placeholder="Dzień tygodnia" _selectedItem={{
             bg: "teal.600",
             endIcon: <CheckIcon size="5" />
-          }} mt={1} onValueChange={itemValue => setService(itemValue)}>
-            <Select.Item label="Poniedziałek" value="ux" />
-            <Select.Item label="Wtorek" value="web" />
-            <Select.Item label="Sroda" value="cross" />
-            <Select.Item label="Czwartek" value="ui" />
-            <Select.Item label="Ptątek" value="backend" />
+          }} mt={1} onValueChange={filterList}>
+            <Select.Item label="Poniedziałek" value="Poniedziałek" />
+            <Select.Item label="Wtorek" value="Wtorek" />
+            <Select.Item label="Środa" value="Środa" />
+            <Select.Item label="Czwartek" value="Czwartek" />
+            <Select.Item label="Piątek" value="Piątek" />
           </Select>
         </Box>
-        <FlatList data={data} renderItem={({
+        <FlatList data={data.filter(checkDay)} renderItem={({
                                              item
                                            }) => <Box borderBottomWidth="1" _dark={{
           borderColor: "gray.600"
@@ -58,19 +51,19 @@ const Schedule = () => {
               <Text _dark={{
                 color: "warmGray.50"
               }} color="coolGray.800" bold>
-                {item.fullName}
+                {item.Name}
               </Text>
               <Text color="coolGray.600" _dark={{
                 color: "warmGray.200"
               }}>
-                {item.recentText}
+                {item.LecturerList}
               </Text>
             </VStack>
             <Spacer />
             <Text fontSize="xs" _dark={{
               color: "warmGray.50"
             }} color="coolGray.800" alignSelf="flex-start">
-              {item.timeStamp}
+              From {item.StartHours} to {item.EndHours}
             </Text>
           </HStack>
         </Box>}
